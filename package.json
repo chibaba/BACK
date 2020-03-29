@@ -1,11 +1,10 @@
 {
-    "name": "mernBackend",
+    "name": "mernackend",
     "version": "1.0.0",
     "description": "backend application for a fullstack mern",
-    "main": "index.js",
+    "main": "template.js",
     "scripts": {
-        "development": "nodemon",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "development": "nodemon"
     },
     "author": "",
     "license": "ISC",
@@ -25,6 +24,7 @@
         "cors": "^2.8.5",
         "express": "^4.17.1",
         "helmet": "^3.22.0",
+        "mongoose": "^5.9.6",
         "nodemon": "^2.0.2"
     }
 }
