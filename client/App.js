@@ -1,6 +1,19 @@
+import React from 'react'
+import MainRouter from './MainRouter'
+import {BrowserRouter } from 'react-router-dom'
 import {MuiThemeProvider, CrateMuiTheme} from 'material-ui/styles';
 import {indigo, pink} from 'material-ui/colors'
 import { createMuiTheme } from 'material-ui';
+import { hot } from 'react-hot-loader'
+
+
+const App = () =>(
+    <BrowserRouter>
+        <MuiThemeProvider theme={theme}>
+            <MainRouter/>
+        </MuiThemeProvider>
+    </BrowserRouter>
+)
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -20,3 +33,5 @@ const theme = createMuiTheme({
         type: 'light'
     }
 })
+
+export default hot(module)(App)
