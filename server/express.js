@@ -3,14 +3,20 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import compress from  'compression';
 import cors from 'cors';
+import devBundle from './devBundle'
 import helmet from 'helmet';
 import Template from './../template'
 import userRoutes from './routes/user.routes'
 import authRoutes from './routes/auth.routes'
+import path from 'path'
+
+const CURRENT_WORKING_DIR = process.cwd()
+app.use('/dist',express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
 
 
 const app = express();
+devBundle.compile(app)
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
