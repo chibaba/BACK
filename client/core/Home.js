@@ -6,6 +6,10 @@ import Typography from 'material-ui/Typography'
 import seashelllmg from './../assets/images/seashell/jpg'
 
 
+Home.propTypes = {
+    classes: PropTypes.object.isRequired
+}
+
 const styles= theme =>({
     card: {
         maxWidth: 600,
@@ -21,3 +25,27 @@ const styles= theme =>({
         minHeight: 330
     }
 })
+
+class Home extends Component {
+    render() {
+        const { classes } = this.props
+        return(
+            <div>
+                <Card className={classes.card}>
+                    <Typography type="headline" component="h2" className=
+                    {classes.title}>
+                        Home Page   
+                    </Typography>
+                    <CardMedia className={classes.media} image={seashelllmg}
+                    title="Unicorn Shells"/>
+                    <CardContent>
+                        <Typography type="body1" component="p">
+                            Welcome to the NerdStar Homepage
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </div>
+        )
+    }
+}
+export default withStyles(styles)(Home)
