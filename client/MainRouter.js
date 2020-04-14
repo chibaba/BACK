@@ -6,6 +6,8 @@ class MainRouter extends Component {
         return (<div>
             <Switch>
                 <Route exact path="/" component={Home} />
+                <Route path="/users" component={Users} />
+                <Link to="/users">Users</Link>
             </Switch>
         </div>)
     }
