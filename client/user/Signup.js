@@ -1,3 +1,5 @@
+import { DialogContent } from "material-ui"
+
 constructor =()=> {
     state = {name: '', password: '', email: '', open: false, error: ''}
 
@@ -22,7 +24,7 @@ clickSubmit = () =>{
     })
 }
 
-render () {
+render() {
     const {classes} = this.props
     return (<div>
         <Card className={classes.card}>
@@ -58,6 +60,20 @@ render () {
                 className={classes.submit}>Submit</Button>
             </CardActions>
         </Card>
-        <Dialog open={this.state.open} disableBackdropClick={true}></Dialog>
+        <Dialog open={this.state.open} disableBackdropClick={true}>
+            <DialogTitle>New Account</DialogTitle>
+            <DialogContent>
+                <DialogContentText>
+                    New Account Successfully Created
+                </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+                <Link to="/signin">
+                    <Button color="primary" autoFocus="autoFocus" variant="raised">
+                        Sign in
+                    </Button>
+                </Link>
+            </DialogActions>
+        </Dialog>
     </div>)
 }
