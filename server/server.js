@@ -12,5 +12,5 @@ app.listen(config.port, (err)=> {
     if(err) {
         console.log(err)
     }
-    console.info('server started on %s.', config.port)
+    console.info('server started on port %s.', config.port)
 })
