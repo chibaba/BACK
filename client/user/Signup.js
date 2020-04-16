@@ -40,7 +40,24 @@ render () {
                 className={classes.textField}
                 value={this.state.email}
                 onChange={this.handleChange('email')}
+                margin="normal"/><br/>
+                <TextField id="password" type="password"
+                className={classes.textField}
+                value={this.state.password}
+                onChange={this.handleChange('password')}
+                margin="normal"/><br/>
+                {this.state.error&&(<Typography component="p"
+                color="color">
+                <Icon color="error"
+                className={classes.error}>error</Icon>
+                {this.state.error}</Typography>)}
             </CardContent>
+            <CardActions>
+                <Button color="primary" raised="raised"
+                onClick={this.clickSubmit}
+                className={classes.submit}>Submit</Button>
+            </CardActions>
         </Card>
+        <Dialog open={this.state.open} disableBackdropClick={true}></Dialog>
     </div>)
 }
